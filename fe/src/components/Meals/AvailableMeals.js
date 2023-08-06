@@ -21,12 +21,14 @@ const AvailableMeals = () => {
 
       const loadedMeals = [];
       for (const i in responseData) {
-        loadedMeals.push({
-          id: responseData[i].productId,
-          name: responseData[i].name,
-          description: responseData[i].description,
-          price: responseData[i].price,
-        });
+        if (responseData[i].isAvailable) {
+          loadedMeals.push({
+            id: responseData[i].productId,
+            name: responseData[i].name,
+            description: responseData[i].description,
+            price: responseData[i].price,
+          });
+        }
       }
       setMeals(loadedMeals);
       setIsLoading(false);
