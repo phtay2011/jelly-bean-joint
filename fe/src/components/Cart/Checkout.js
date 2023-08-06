@@ -52,7 +52,7 @@ const Checkout = (props) => {
         <label htmlFor="name">Your Telegram Handle</label>
         <input type="text" id="name" ref={nameInputRef} />
         {!formInputsValidity.name && (
-          <p>Please enter a valid Telegram Handle!</p>
+          <p>Please enter a valid Telegram Handle, eg. @abcd!</p>
         )}
       </div>
       <div className={addressControlClasses}>

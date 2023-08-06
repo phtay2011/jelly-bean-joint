@@ -1,0 +1,31 @@
+﻿name,description,price,productId,isAvailable
+Mango Milkshake,L5000,18,m1,TRUE
+Lush Ice,L5000,18,m2,TRUE
+Grape,L5000,18,m3,TRUE
+Skittles,L5000,18,m4,TRUE
+Guava,L5000,18,m5,TRUE
+Taro,L5000,18,m6,TRUE
+Oolong,L5000,18,m7,TRUE
+Peppermint,L5000,18,m8,TRUE
+Apple,L5000,18,m9,TRUE
+Passion Fruit,L5000,18,m10,TRUE
+Peach,L5000,18,m11,TRUE
+Root Beer,L5000,18,m12,TRUE
+Coke,L5000,18,m13,TRUE
+Lychee,L5000,18,m14,TRUE
+TGY,L5000,18,m15,TRUE
+Strawberry Milk,L5000,18,m16,TRUE
+Cranberry,L5000,18,m17,TRUE
+Peach Grape Banana,L5000,18,m18,TRUE
+Strawberry Watermelon,L5000,18,m19,TRUE
+Surfing Lemon,L5000,18,m20,TRUE
+Peach Oolong,L5000,18,m21,TRUE
+Banana Ice,L5000,18,m22,TRUE
+Chocolate Mint,L5000,18,m23,TRUE
+Vanilla Ice Cream,L5000,18,m24,TRUE
+Cappuccino,L5000,18,m25,TRUE
+Chcolate Strawberry,L5000,18,m26,TRUE
+Blueberry Ice cream,L5000,18,m27,TRUE
+Banana Milkshake,L5000,18,m28,TRUE
+Mange Ice Cream,L5000,18,m29,TRUE
+Strawberry Ice Cream,L5000,18,m30,TRUE
