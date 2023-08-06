@@ -5,6 +5,7 @@ import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
+import image from "../../assets/order-confirmation.svg";
 
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
@@ -93,6 +94,9 @@ const Cart = (props) => {
     <React.Fragment>
       <p className={classes.confirmation}> We have received your order!</p>
       <p> We will send you an order confirmation via Telegram!</p>
+      <div className={classes.image}>
+        <img src={image} alt="Order Confirmation" />
+      </div>
       <div className={classes.actions}>
         <button className={classes.button} onClick={props.onClose}>
           Close

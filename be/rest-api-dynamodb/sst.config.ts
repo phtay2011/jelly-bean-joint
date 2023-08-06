@@ -1,5 +1,5 @@
 import { SSTConfig } from "sst";
-import { ExampleStack } from "./stacks/ExampleStack";
+import { JellyBeanStack } from "./stacks/JellyBeanStack";
 
 export default {
   config(_input) {
@@ -9,6 +9,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(ExampleStack);
+    app.stack(JellyBeanStack);
   },
 } satisfies SSTConfig;

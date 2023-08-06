@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.385.0",
+    "@aws-sdk/client-ses": "^3.385.0",
     "@aws-sdk/lib-dynamodb": "^3.385.0",
     "@serverless-stack/node": "^1.18.4",
     "moment-timezone": "^0.5.43",

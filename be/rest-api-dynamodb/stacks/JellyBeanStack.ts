@@ -1,6 +1,6 @@
 import { Api, ReactStaticSite, StackContext, Table } from "sst/constructs";
 
-export function ExampleStack({ stack }: StackContext) {
+export function JellyBeanStack({ stack }: StackContext) {
   // Create the table
   const productsTable = new Table(stack, "Products", {
     fields: {
@@ -28,6 +28,7 @@ export function ExampleStack({ stack }: StackContext) {
       "GET /listProduct": "packages/functions/src/listProducts.main",
       "POST /sendOrder": "packages/functions/src/sendOrder.main",
       "POST /createProduct": "packages/functions/src/createProduct.main",
+      // "POST /sendEmail": "packages/functions/src/sendEmail.main",
     },
   });
 
