@@ -9,17 +9,24 @@ export function ExampleStack({ stack }: StackContext) {
     primaryIndex: { partitionKey: "productId" },
   });
 
+  const ordersTable = new Table(stack, "Orders", {
+    fields: {
+      orderId: "string",
+    },
+    primaryIndex: { partitionKey: "orderId" },
+  });
+
   // Create the HTTP API
   const api = new Api(stack, "Api", {
     defaults: {
       function: {
         // Bind the table name to our API
-        bind: [productsTable],
+        bind: [productsTable, ordersTable],
       },
     },
     routes: {
-      "POST /addProduct": "packages/functions/src/addProducts.main",
       "GET /listProduct": "packages/functions/src/listProducts.main",
+      "POST /sendOrder": "packages/functions/src/sendOrder.main",
     },
   });
 

@@ -11,7 +11,7 @@ const AvailableMeals = () => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://react-http-3c3ae-default-rtdb.asia-southeast1.firebasedatabase.app/meals.json"
+        "https://rbflf35xpf.execute-api.ap-southeast-1.amazonaws.com/listProduct"
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");
@@ -20,12 +20,12 @@ const AvailableMeals = () => {
       const responseData = await response.json();
 
       const loadedMeals = [];
-      for (const key in responseData) {
+      for (const i in responseData) {
         loadedMeals.push({
-          id: key,
-          name: responseData[key].name,
-          description: responseData[key].description,
-          price: responseData[key].price,
+          id: responseData[i].productId,
+          name: responseData[i].name,
+          description: responseData[i].description,
+          price: responseData[i].price,
         });
       }
       setMeals(loadedMeals);

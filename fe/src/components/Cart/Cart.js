@@ -30,11 +30,12 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://react-http-3c3ae-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json",
+      "https://rbflf35xpf.execute-api.ap-southeast-1.amazonaws.com/sendOrder",
       {
         method: "POST",
         body: JSON.stringify({
-          user: userData,
+          user: userData.name,
+          address: userData.address,
           orderedItems: cartCtx.items,
         }),
       }
@@ -90,7 +91,8 @@ const Cart = (props) => {
 
   const didSubmitModalContent = (
     <React.Fragment>
-      <p> Successfully sent the order!</p>
+      <p className={classes.confirmation}> We have received your order!</p>
+      <p> We will send you an order confirmation via Telegram!</p>
       <div className={classes.actions}>
         <button className={classes.button} onClick={props.onClose}>
           Close
