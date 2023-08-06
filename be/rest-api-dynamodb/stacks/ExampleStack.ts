@@ -2,11 +2,11 @@ import { Api, ReactStaticSite, StackContext, Table } from "sst/constructs";
 
 export function ExampleStack({ stack }: StackContext) {
   // Create the table
-  const table = new Table(stack, "Counter", {
+  const productsTable = new Table(stack, "Products", {
     fields: {
-      counter: "string",
+      productId: "string",
     },
-    primaryIndex: { partitionKey: "counter" },
+    primaryIndex: { partitionKey: "productId" },
   });
 
   // Create the HTTP API
@@ -14,11 +14,12 @@ export function ExampleStack({ stack }: StackContext) {
     defaults: {
       function: {
         // Bind the table name to our API
-        bind: [table],
+        bind: [productsTable],
       },
     },
     routes: {
-      "POST /": "packages/functions/src/lambda.main",
+      "POST /addProduct": "packages/functions/src/addProducts.main",
+      "GET /listProduct": "packages/functions/src/listProducts.main",
     },
   });
 

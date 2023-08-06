@@ -4,7 +4,7 @@ import { ExampleStack } from "./stacks/ExampleStack";
 export default {
   config(_input) {
     return {
-      name: "rest-api-dynamodb",
+      name: "jelly-bean-joint",
       region: "ap-southeast-1",
     };
   },
