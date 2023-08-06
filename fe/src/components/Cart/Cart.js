@@ -31,7 +31,7 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://bez52gvpna.execute-api.ap-southeast-1.amazonaws.com/sendOrder",
+      "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/sendOrder",
       {
         method: "POST",
         body: JSON.stringify({
