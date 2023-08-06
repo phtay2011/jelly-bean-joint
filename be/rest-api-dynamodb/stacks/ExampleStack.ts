@@ -27,6 +27,7 @@ export function ExampleStack({ stack }: StackContext) {
     routes: {
       "GET /listProduct": "packages/functions/src/listProducts.main",
       "POST /sendOrder": "packages/functions/src/sendOrder.main",
+      "POST /createProduct": "packages/functions/src/createProduct.main",
     },
   });
 
