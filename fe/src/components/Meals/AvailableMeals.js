@@ -11,7 +11,7 @@ const AvailableMeals = () => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/listProduct"
+        "https://api.jellybeanjoint.com/listProduct"
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");

@@ -8,7 +8,7 @@ import Checkout from "./Checkout";
 import image from "../../assets/order-confirmation.svg";
 
 // const baseUrl = "https://e5z2zoxnm4.execute-api.ap-southeast-1.amazonaws.com"; // dev
-const baseUrl = "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com"; // prod
+const baseUrl = "https://api.jellybeanjoint.com"; // prod
 
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
@@ -107,10 +107,7 @@ const Cart = (props) => {
       <p>
         You can retrieve your order details{" "}
         <a
-          href={
-            "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/findOrderById/" +
-            orderIdDisplay
-          }
+          href={baseUrl + "/findOrderById/" + orderIdDisplay}
           target="_blank"
           rel="noopener noreferrer"
         >

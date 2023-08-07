@@ -24,6 +24,9 @@ export function JellyBeanStack({ stack }: StackContext) {
         bind: [productsTable, ordersTable],
       },
     },
+    customDomain:
+      stack.stage === "production" ? "api.jellybeanjoint.com" : undefined,
+
     routes: {
       "GET /listProduct": "packages/functions/src/listProducts.main",
       "POST /sendOrder": "packages/functions/src/sendOrder.main",
