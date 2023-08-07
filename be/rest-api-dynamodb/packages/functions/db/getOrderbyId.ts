@@ -1,12 +1,7 @@
 import ddbClient from "./ddbClient";
 import { Table } from "sst/node/table";
 
-export type AddOrderParams = {
-  orderId: string;
-};
-
-export async function getOrderById(addOrderParams: AddOrderParams) {
-  const { orderId } = addOrderParams;
+export async function getOrderById(orderId: string) {
   console.log("this is the orderId", orderId);
 
   const params = {

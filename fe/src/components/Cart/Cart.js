@@ -98,12 +98,32 @@ const Cart = (props) => {
   const didSubmitModalContent = (
     <React.Fragment>
       <p className={classes.confirmation}> We have received your order!</p>
-      <p> We will send you an order confirmation via Telegram!</p>
-      <p>This is your order id: ${orderIdDisplay}</p>
       <p>
-        You can fetch your orderId via POST
-        https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/findOrderById
+        We will send you an order confirmation and further support via Telegram!
       </p>
+      <p>
+        This is your order id: <strong>{orderIdDisplay}</strong>
+      </p>
+      <p>
+        You can retrieve your order details{" "}
+        <a
+          href={
+            "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/findOrderById/" +
+            orderIdDisplay
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here
+        </a>
+      </p>
+      <p>
+        <em>
+          Please rest assured that we will handle your order with the highest
+          level of confidentiality.
+        </em>
+      </p>
+
       <div className={classes.image}>
         <img src={image} alt="Order Confirmation" />
       </div>

@@ -29,7 +29,9 @@ export function JellyBeanStack({ stack }: StackContext) {
       "POST /sendOrder": "packages/functions/src/sendOrder.main",
       "POST /createProduct": "packages/functions/src/createProduct.main",
       // "POST /sendEmail": "packages/functions/src/sendEmail.main",
-      "POST /findOrderById": "packages/functions/src/findOrderById.main",
+      // "POST /findOrderById": "packages/functions/src/findOrderById.main",
+      "GET /findOrderById/{orderId}":
+        "packages/functions/src/findOrderById.main",
     },
   });
 

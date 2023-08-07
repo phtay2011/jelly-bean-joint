@@ -1,5 +1,5 @@
 import { APIGatewayProxyHandlerV2 } from "aws-lambda";
-import { getOrderById, AddOrderParams } from "../db/getOrderbyId";
+import { getOrderById } from "../db/getOrderbyId";
 
 // Sample JSON Body
 // {
@@ -8,9 +8,8 @@ import { getOrderById, AddOrderParams } from "../db/getOrderbyId";
 
 export const main: APIGatewayProxyHandlerV2 = async (event: any) => {
   // 1. Validate JSON Body
-  let data: AddOrderParams;
   try {
-    data = JSON.parse(event.body!);
+    const data = event.pathParameters.orderId;
     console.log("JSON valid, going to add to dynamo:", data);
   } catch (e) {
     return {
@@ -23,6 +22,7 @@ export const main: APIGatewayProxyHandlerV2 = async (event: any) => {
 
   // 2. call DB
   try {
+    const data = event.pathParameters.orderId;
     const response = await getOrderById(data);
     console.log(response);
     return {
