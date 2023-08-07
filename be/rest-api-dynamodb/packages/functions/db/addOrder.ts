@@ -11,13 +11,14 @@ export type AddOrderParams = {
 };
 
 export async function addOrder(addOrderParams: any) {
-  const { orderId } = addOrderParams;
+  // const { orderId } = addOrderParams;
+  const orderId = uuidv4();
 
   const params = {
     TableName: Table.Orders.tableName,
     Item: {
       ...addOrderParams,
-      orderId: uuidv4(),
+      orderId: orderId,
       createdAt: moment().format(),
     },
   };

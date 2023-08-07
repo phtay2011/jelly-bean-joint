@@ -41,7 +41,10 @@ export const main: APIGatewayProxyHandlerV2 = async (event) => {
     const orderId = await addOrder(data);
     return {
       statusCode: 200,
-      body: `Successfully submitted Order ${orderId}`,
+      body: JSON.stringify({
+        text: `Successfully submitted Order ${orderId}`,
+        orderId: orderId,
+      }),
     };
   } catch (e) {
     console.log(e);

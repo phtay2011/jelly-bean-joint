@@ -7,10 +7,14 @@ import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
 import image from "../../assets/order-confirmation.svg";
 
+// const baseUrl = "https://e5z2zoxnm4.execute-api.ap-southeast-1.amazonaws.com"; // dev
+const baseUrl = "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com"; // prod
+
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
+  const [orderIdDisplay, setOrderIdDisplay] = useState("");
   const cartCtx = useContext(CartContext);
 
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
@@ -30,20 +34,21 @@ const Cart = (props) => {
 
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
-    await fetch(
-      "https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/sendOrder",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          user: userData.name,
-          address: userData.address,
-          orderedItems: cartCtx.items,
-        }),
-      }
-    );
+    const response = await fetch(`${baseUrl}/sendOrder`, {
+      method: "POST",
+      body: JSON.stringify({
+        user: userData.name,
+        address: userData.address,
+        orderedItems: cartCtx.items,
+      }),
+    });
+    const data = await response.json();
+    const displayOrderId = data.orderId;
+
     setIsSubmitting(false);
     setDidSubmit(true);
     cartCtx.clearCart();
+    setOrderIdDisplay(displayOrderId);
   };
 
   const cartItems = (
@@ -94,6 +99,7 @@ const Cart = (props) => {
     <React.Fragment>
       <p className={classes.confirmation}> We have received your order!</p>
       <p> We will send you an order confirmation via Telegram!</p>
+      <p>This is your order id: ${orderIdDisplay}</p>
       <div className={classes.image}>
         <img src={image} alt="Order Confirmation" />
       </div>
