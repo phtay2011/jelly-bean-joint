@@ -100,6 +100,10 @@ const Cart = (props) => {
       <p className={classes.confirmation}> We have received your order!</p>
       <p> We will send you an order confirmation via Telegram!</p>
       <p>This is your order id: ${orderIdDisplay}</p>
+      <p>
+        You can fetch your orderId via POST
+        https://xn6pxrnc58.execute-api.ap-southeast-1.amazonaws.com/findOrderById
+      </p>
       <div className={classes.image}>
         <img src={image} alt="Order Confirmation" />
       </div>
