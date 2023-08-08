@@ -1,12 +1,14 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import HeaderCartButton from "./HeaderCartButton";
 // import mealsImage from "../../assets/meals.jpg";
 import background from "../../assets/Frame 42985.svg";
+import realImage from "../../assets/real-image.svg";
 import logo from "../../assets/logo.png";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
+  const [useRealImage, setUseRealImage] = useState(false);
   return (
     <Fragment>
       <header className={classes.header}>
@@ -15,7 +17,12 @@ const Header = (props) => {
         <HeaderCartButton onClick={props.onShowCart} />
       </header>
       <div className={classes["main-image"]}>
-        <img src={background} alt="A table full of delicious food!" />
+        {!useRealImage && (
+          <img src={background} alt="A table full of delicious food!" />
+        )}
+        {useRealImage && (
+          <img src={realImage} alt="A table full of delicious food!" />
+        )}
       </div>
     </Fragment>
   );
