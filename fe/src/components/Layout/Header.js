@@ -9,6 +9,14 @@ import classes from "./Header.module.css";
 
 const Header = (props) => {
   const [useRealImage, setUseRealImage] = useState(false);
+
+  const revealImageHandler = () => {
+    if (useRealImage) {
+      setUseRealImage(false);
+    } else {
+      setUseRealImage(true);
+    }
+  };
   return (
     <Fragment>
       <header className={classes.header}>
@@ -24,6 +32,7 @@ const Header = (props) => {
           <img src={realImage} alt="A table full of delicious food!" />
         )}
       </div>
+      <button onClick={revealImageHandler}> </button>
     </Fragment>
   );
 };
