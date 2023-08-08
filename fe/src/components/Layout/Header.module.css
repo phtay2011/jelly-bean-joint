@@ -32,3 +32,8 @@
   object-fit: cover;
   /* transform: rotateZ(-3deg) translateY(-4rem) translateX(-1rem); */
 }
+
+.button {
+  background-color: #3f3f3f;
+  border: none;
+}

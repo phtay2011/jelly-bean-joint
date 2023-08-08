@@ -32,7 +32,9 @@ const Header = (props) => {
           <img src={realImage} alt="A table full of delicious food!" />
         )}
       </div>
-      <button onClick={revealImageHandler}> </button>
+      <button onClick={revealImageHandler} className={classes.button}>
+        {" "}
+      </button>
     </Fragment>
   );
 };
